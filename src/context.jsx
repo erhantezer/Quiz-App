@@ -11,8 +11,10 @@ export const AppProvider = ({children}) => {
 
     
     return (
-            <AppContext>
+            <AppContext.Provider value={{
+                
+            }}>
                 {children}
-            </AppContext>
+            </AppContext.Provider>
         )
 }
