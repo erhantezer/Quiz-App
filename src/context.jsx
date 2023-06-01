@@ -16,6 +16,7 @@ export const AppProvider = ({children}) => {
     const [loading, setLoading] = useState(false);
     const [questions, setQuestions] = useState([]);
     const [error, setError] = useState(false);
+    
 
     const fetchQuestions = () => {
         setLoading(true)

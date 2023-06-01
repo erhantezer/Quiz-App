@@ -2,7 +2,9 @@
 
 const SetupForm = () => {
     return (
-        <div>SetupForm</div>
+        <main>
+            <div></div>
+        </main>
     )
 }
 
