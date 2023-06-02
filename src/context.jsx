@@ -17,6 +17,7 @@ export const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [questions, setQuestions] = useState([]);
     const [error, setError] = useState(false);
+    const [isModalOpen, setisModalOpen] = useState(false);
     const [quiz, setQuiz] = useState({
         amount: 10,
         category: "sports",
