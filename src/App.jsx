@@ -1,4 +1,5 @@
 import Loading from "./Loading"
+import SetupForm from "./SetupForm"
 import { useGlobalContext } from "./context"
 
 
@@ -7,6 +8,9 @@ function App() {
 
   if (loading) {
     return <Loading />
+  }
+  if ("waiting") {
+    return <SetupForm/>
   }
 
   return (

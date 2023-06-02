@@ -30,8 +30,7 @@ export const AppProvider = ({ children }) => {
             const response = await axios(tempUrl)
             if (response) {
                 const data = response.data.results
-                
-                if (data.results > 0) {
+                if (data.length > 0) {
                     setQuestions(data)
                     setLoading(false)
                     setError(false)
