@@ -22,13 +22,17 @@ export const AppProvider = ({children}) => {
     const fetchQuestions = async () => {
         setLoading(true)
         try {
-            const {data} = await axios(tempUrl)
-            console.log(data)
+            const response = await axios(tempUrl)
+            const data = response.data.results
+            setQuestions(data)
+
             setLoading(false)
         } catch (error) {
             setError(true)
         }
     }
+
+    console.log(questions)
 
     useEffect(() => {
         fetchQuestions()
@@ -36,6 +40,7 @@ export const AppProvider = ({children}) => {
     
     return (
             <AppContext.Provider value={{
+                loading,
                 
             }}>
                 {children}
