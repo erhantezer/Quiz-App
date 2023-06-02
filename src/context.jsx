@@ -13,20 +13,37 @@ const API_ENDPOINT = 'https://opentdb.com/api.php?';
 const url = ''
 const tempUrl = 'https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple';
 
-export const AppProvider = ({children}) => {
+export const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [questions, setQuestions] = useState([]);
     const [error, setError] = useState(false);
-    
+    const [quiz, setQuiz] = useState({
+        amount: 10,
+        category: "sports",
+        difficulty: "easy",
+    });
+
 
     const fetchQuestions = async () => {
         setLoading(true)
         try {
             const response = await axios(tempUrl)
-            const data = response.data.results
-            setQuestions(data)
+            if (response) {
+                const data = response.data.results
+                
+                if (data.results > 0) {
+                    setQuestions(data)
+                    setLoading(false)
+                    setError(false)
+                } else {
+                    setError(true)
+                }
+            } else {
+                console.log("waiting")
+            }
 
-            setLoading(false)
+
+            
         } catch (error) {
             setError(true)
         }
@@ -37,14 +54,14 @@ export const AppProvider = ({children}) => {
     useEffect(() => {
         fetchQuestions()
     }, []);
-    
+
     return (
-            <AppContext.Provider value={{
-                loading,
-                error,
-                
-            }}>
-                {children}
-            </AppContext.Provider>
-        )
+        <AppContext.Provider value={{
+            loading,
+            error,
+
+        }}>
+            {children}
+        </AppContext.Provider>
+    )
 }
