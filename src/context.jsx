@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { createContext } from "react";
 
@@ -18,13 +19,14 @@ export const AppProvider = ({children}) => {
     const [error, setError] = useState(false);
     
 
-    const fetchQuestions = () => {
+    const fetchQuestions = async () => {
         setLoading(true)
         try {
-            
+            const {data} = await axios(tempUrl)
+            console.log(data)
             setLoading(false)
         } catch (error) {
-            
+            setError(true)
         }
     }
 
