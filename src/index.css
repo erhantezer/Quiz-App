@@ -145,7 +145,20 @@ p {
 }
 
 /*! loading */
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 .loading {
-    
+    margin: 0 auto;
+    /* background-color: blue; */
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-top: 15rem;
+    border-top-color: var(--clr-primary-5);
+    animation: spinner 6s linear infinite;
 }

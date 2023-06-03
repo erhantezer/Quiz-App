@@ -33,7 +33,7 @@ export const AppProvider = ({ children }) => {
                 const data = response.data.results
                 if (data.length > 0) {
                     setQuestions(data)
-                    setLoading(false)
+                    setLoading(true)
                     setError(false)
                 } else {
                     setError(true)
@@ -70,7 +70,7 @@ export const AppProvider = ({ children }) => {
             questions,
             isModalOpen,
             quiz,
-            
+
         }}>
             {children}
         </AppContext.Provider>
