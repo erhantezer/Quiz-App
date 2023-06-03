@@ -1,4 +1,5 @@
 import Loading from "./Loading"
+import Modal from "./Modal"
 import SetupForm from "./SetupForm"
 import { useGlobalContext } from "./context"
 
@@ -10,18 +11,19 @@ function App() {
     return <Loading />
   }
   if ("waiting") {
-    return <SetupForm/>
+    return <SetupForm />
   }
 
   return (
     <main>
+      <Modal />
       <section className="quiz">
         <p className="correct-answers">correct answers</p>
         <article className="container">
-        <h2/>
-        <div className="btn-container">
+          <h2 />
+          <div className="btn-container">
 
-        </div>
+          </div>
         </article>
         <button className="next-question">
           next question
