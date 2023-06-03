@@ -68,7 +68,9 @@ export const AppProvider = ({ children }) => {
             loading,
             error,
             questions,
-
+            isModalOpen,
+            quiz,
+            
         }}>
             {children}
         </AppContext.Provider>
