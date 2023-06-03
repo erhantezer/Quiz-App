@@ -17,7 +17,7 @@ export const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [questions, setQuestions] = useState([]);
     const [error, setError] = useState(false);
-    const [isModalOpen, setisModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [quiz, setQuiz] = useState({
         amount: 10,
         category: "sports",
@@ -49,6 +49,14 @@ export const AppProvider = ({ children }) => {
         }
     }
 
+    const openModal = () => {
+        setIsModalOpen(true)
+    }
+
+    const closeModal = () => {
+        setIsModalOpen(false)
+    }
+
     console.log(questions)
 
     useEffect(() => {
@@ -59,6 +67,7 @@ export const AppProvider = ({ children }) => {
         <AppContext.Provider value={{
             loading,
             error,
+            questions,
 
         }}>
             {children}
