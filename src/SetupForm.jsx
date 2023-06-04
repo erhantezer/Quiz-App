@@ -2,11 +2,11 @@ import { useGlobalContext } from "./context"
 
 
 const SetupForm = () => {
-    const {error} = useGlobalContext()
+    const {error, handleSubmit, handleChange, quiz} = useGlobalContext()
     return (
         <main>
             <section className="quiz quiz-small">
-                <form className="setup-form">
+                <form className="setup-form" onSubmit={handleSubmit}>
                     <h2>setup quiz</h2>
                     {/* amount */}
                     <div className="form-control">
@@ -15,11 +15,11 @@ const SetupForm = () => {
                         type="number"
                         name="amount"
                         id="amount"
-                        value={null}
+                        value={quiz.amount}
                         className="form-input"
                         min={1}
                         max={50}
-                        onChange={null}
+                        onChange={handleChange}
                         />
                     </div>
                     {/* category */}
@@ -29,8 +29,8 @@ const SetupForm = () => {
                         name="category" 
                         id="category"
                         className="form-input"
-                        value={null}
-                        onChange={null}
+                        value={quiz.category}
+                        onChange={handleChange}
                         >
                             <option value="sports">sports</option>
                             <option value="history">history</option>
@@ -44,8 +44,8 @@ const SetupForm = () => {
                             name="difficult"
                             id="difficult"
                             className="form-input"
-                            value={null}
-                            onChange={null}
+                            value={quiz.difficult}
+                            onChange={handleChange}
                         >
                             <option value="easy">easy</option>
                             <option value="medium">medium</option>

@@ -71,10 +71,6 @@ export const AppProvider = ({ children }) => {
 
     console.log(questions)
 
-    useEffect(() => {
-        fetchQuestions()
-    }, []);
-
     return (
         <AppContext.Provider value={{
             loading,
@@ -82,7 +78,9 @@ export const AppProvider = ({ children }) => {
             questions,
             isModalOpen,
             quiz,
-            waiting
+            waiting,
+            handleChange,
+            handleSubmit
         }}>
             {children}
         </AppContext.Provider>

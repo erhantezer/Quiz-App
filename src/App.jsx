@@ -5,12 +5,12 @@ import { useGlobalContext } from "./context"
 
 
 function App() {
-  const { loading } = useGlobalContext()
+  const { loading, waiting } = useGlobalContext()
 
   if (loading) {
     return <Loading />
   }
-  if ("waiting") {
+  if (waiting) {
     return <SetupForm />
   }
 
