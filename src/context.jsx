@@ -18,6 +18,7 @@ export const AppProvider = ({ children }) => {
     const [questions, setQuestions] = useState([]);
     const [error, setError] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [waiting, setWaiting] = useState(true);
     const [quiz, setQuiz] = useState({
         amount: 10,
         category: "sports",
@@ -81,7 +82,7 @@ export const AppProvider = ({ children }) => {
             questions,
             isModalOpen,
             quiz,
-            
+            waiting
         }}>
             {children}
         </AppContext.Provider>
