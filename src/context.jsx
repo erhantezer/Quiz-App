@@ -25,10 +25,10 @@ export const AppProvider = ({ children }) => {
     });
 
 
-    const fetchQuestions = async () => {
+    const fetchQuestions = async (url) => {
         setLoading(true)
         try {
-            const response = await axios(tempUrl)
+            const response = await axios(url)
             if (response) {
                 const data = response.data.results
                 if (data.length > 0) {
@@ -55,6 +55,17 @@ export const AppProvider = ({ children }) => {
 
     const closeModal = () => {
         setIsModalOpen(false)
+    }
+
+    const handleChange = (e) => {
+        setQuiz({ ...quiz, [e.target.name]:e.target.value})
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const {amount, category, difficulty} = quiz
+        const url = `${API_ENDPOINT}amount${amount}&difficulty${difficulty}&category${category}`
+        fetchQuestions(url)
     }
 
     console.log(questions)
