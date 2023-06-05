@@ -54,11 +54,17 @@ export const AppProvider = ({ children }) => {
         }
     }
 
+    const checkAnswer = () => {
+    
+    }
+
     const openModal = () => {
         setIsModalOpen(true)
     }
 
     const closeModal = () => {
+        setWaiting(true)
+        setCorrect(0)
         setIsModalOpen(false)
     }
 
@@ -84,7 +90,9 @@ export const AppProvider = ({ children }) => {
             quiz,
             waiting,
             handleChange,
-            handleSubmit
+            handleSubmit,
+            openModal,
+            closeModal
         }}>
             {children}
         </AppContext.Provider>
