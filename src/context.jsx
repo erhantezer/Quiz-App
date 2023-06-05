@@ -92,7 +92,12 @@ export const AppProvider = ({ children }) => {
             handleChange,
             handleSubmit,
             openModal,
-            closeModal
+            closeModal,
+            correct,
+            setCorrect,
+            index,
+            setIndex,
+            checkAnswer
         }}>
             {children}
         </AppContext.Provider>
