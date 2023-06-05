@@ -38,11 +38,13 @@ export const AppProvider = ({ children }) => {
                     setQuestions(data)
                     setLoading(false)
                     setError(false)
+                    setWaiting(false)
                 } else {
                     setError(true)
+                    setWaiting(true)
                 }
             } else {
-                console.log("waiting")
+                setWaiting(true)
             }
 
 
