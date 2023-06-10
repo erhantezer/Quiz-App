@@ -54,8 +54,11 @@ export const AppProvider = ({ children }) => {
         }
     }
 
-    const checkAnswer = () => {
-    
+    const checkAnswer = (value) => {
+        if (value) {
+            setCorrect((oldState) => oldState + 1)
+        }
+        nexQuestions()
     }
 
     const openModal = () => {
