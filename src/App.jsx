@@ -5,7 +5,16 @@ import { useGlobalContext } from "./context"
 
 
 function App() {
-  const { loading, waiting } = useGlobalContext();
+  const { 
+    waiting,
+    loading,
+    questions,
+    index,
+    correct,
+    nextQuestion,
+    checkAnswer,
+    
+  } = useGlobalContext();
 
   if (loading) {
     return <Loading />
@@ -14,6 +23,8 @@ function App() {
   if (waiting) {
     return <SetupForm />
   }
+
+  const { question, incorrect_answers, correct_answer } = questions[index]
 
   return (
     <main>
