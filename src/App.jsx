@@ -24,6 +24,7 @@ function App() {
     return <SetupForm />
   }
 
+  // const answers = [...incorrect_answers, correct_answer]
   const { question, incorrect_answers, correct_answer } = questions[index]
 
   return (
