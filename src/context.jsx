@@ -95,7 +95,6 @@ export const AppProvider = ({ children }) => {
         fetchQuestions(url)
     }
 
-    console.log(questions)
 
     return (
         <AppContext.Provider value={{
