@@ -46,7 +46,16 @@ function App() {
         <article className="container">
           <h2 dangerouslySetInnerHTML={{ __html: question }} />
           <div className="btn-container">
-
+            {answers.map((answer, index) => {
+              return (
+                <button
+                  key={index}
+                  className='answer-btn'
+                  onClick={() => checkAnswer(correct_answer === answer)}
+                  dangerouslySetInnerHTML={{ __html: answer }}
+                />
+              )
+            })}
           </div>
         </article>
         <button className="next-question">
