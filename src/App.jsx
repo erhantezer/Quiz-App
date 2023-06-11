@@ -40,9 +40,11 @@ function App() {
     <main>
       <Modal />
       <section className="quiz">
-        <p className="correct-answers">correct answers</p>
+        <p className="correct-answers">
+          correct answers: {correct}/{index}
+        </p>
         <article className="container">
-          <h2 />
+          <h2 dangerouslySetInnerHTML={{ __html: question }} />
           <div className="btn-container">
 
           </div>
