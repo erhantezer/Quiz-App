@@ -46,9 +46,6 @@ export const AppProvider = ({ children }) => {
             } else {
                 setWaiting(true)
             }
-
-
-            
         } catch (error) {
             setError(true)
         }
@@ -85,12 +82,12 @@ export const AppProvider = ({ children }) => {
     }
 
     const handleChange = (e) => {
-        setQuiz({ ...quiz, [e.target.name]:e.target.value})
+        setQuiz({ ...quiz, [e.target.name]: e.target.value })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const {amount, category, difficulty} = quiz
+        const { amount, category, difficulty } = quiz
         const url = `${API_ENDPOINT}amount${amount}&difficulty${difficulty}&category${category}`
         fetchQuestions(url)
     }
