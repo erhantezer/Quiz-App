@@ -5,7 +5,7 @@ import { useGlobalContext } from "./context"
 
 
 function App() {
-  const { 
+  const {
     waiting,
     loading,
     questions,
@@ -13,13 +13,12 @@ function App() {
     correct,
     nextQuestion,
     checkAnswer,
-    
   } = useGlobalContext();
 
   if (loading) {
     return <Loading />
   }
-  
+
   if (waiting) {
     return <SetupForm />
   }
