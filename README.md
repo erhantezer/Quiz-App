@@ -1,4 +1,4 @@
-# QUIZ-APP
+# QUIZ-APP project
 
 ## context.jsx
 ```js
