@@ -47,15 +47,11 @@ export const AppProvider = ({ children }) => {
                 }
             } else {
                 setWaiting(true)
-            }
-
-
-            
+            }   
         } catch (error) {
             setError(true)
         }
     }
-
 
     const nextQuestion = () => {
         setIndex((oldIndex) => {
