@@ -1,5 +1,6 @@
 # QUIZ-APP project
 
+
 ## context.jsx
 ```js
 import axios from "axios";
@@ -12,7 +13,7 @@ export const useGlobalContext = () => {
 }
 
 const API_ENDPOINT = 'https://opentdb.com/api.php?';
-const url = ''
+const url = '';
 const tempUrl = 'https://opentdb.com/api.php?amount=10&category=21&difficulty=easy&type=multiple';
 
 export const AppProvider = ({ children }) => {
