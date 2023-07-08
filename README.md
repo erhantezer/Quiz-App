@@ -8,6 +8,7 @@ import { useContext, useState } from "react";
 import { createContext } from "react";
 
 const AppContext = createContext();
+
 export const useGlobalContext = () => {
     return useContext(AppContext)
 }
