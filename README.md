@@ -31,7 +31,6 @@ export const AppProvider = ({ children }) => {
         difficulty: "easy",
     });
 
-
     const fetchQuestions = async (url) => {
         setLoading(true)
         try {
