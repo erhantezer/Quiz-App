@@ -222,7 +222,7 @@ export default Modal
 
 ## setupform.jsx
 ```js
-import { useGlobalContext } from "./context"
+import { useGlobalContext } from "./context";
 
 
 const SetupForm = () => {
