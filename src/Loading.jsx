@@ -2,7 +2,7 @@
 const Loading = () => {
     return (
         <main>
-            <div className="loading"></div>
+            <div className="loading">Erhan Bu Ne</div>
         </main>
     )
 }

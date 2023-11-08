@@ -161,9 +161,8 @@ p {
     height: 6rem;
     border-radius: 50%;
     border: 3px solid #ccc;
-    margin-top: 15rem;
     border-top-color: var(--clr-primary-5);
-    animation: spinner 1s linear infinite;
+    animation: spinner 2s linear infinite;
 }
 
 main {
