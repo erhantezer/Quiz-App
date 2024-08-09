@@ -162,7 +162,7 @@ p {
     border-radius: 50%;
     border: 3px solid #ccc;
     border-top-color: var(--clr-primary-5);
-    animation: spinner 2s linear infinite;
+    animation: spinner 3s linear infinite;
 }
 
 main {
